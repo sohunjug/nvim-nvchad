@@ -1,7 +1,7 @@
 local M = {
   "yamatsum/nvim-cursorline",
   disable = true,
-  event = { "BufReadPre", "BufNewFile" },
+  -- event = { "BufReadPre", "BufNewFile" },
 }
 
 M.config = function()

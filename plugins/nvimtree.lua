@@ -257,7 +257,10 @@ M.config = function()
     filters = {
       dotfiles = false,
       custom = {},
-      exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
+      exclude = {
+        vim.fn.stdpath "config" .. "/lua/custom",
+        vim.env.HOME .. "/Code/dotfiles/.config/nvim/lua/custom",
+      },
     },
     filesystem_watchers = {
       enable = false,
