@@ -36,35 +36,35 @@ M.general = {
     ["<leader>H"] = { "<cmd> Alpha <cr>", "Home Start", opts = { nowait = true } },
     ["<leader>ba"] = {
       function()
-        require("nvchad_ui.tabufline").closeAllBufs()
+        require("nvchad.tabufline").closeAllBufs()
       end,
       "Close All Buffers",
       opts = { nowait = true },
     },
     ["<leader>bd"] = {
       function()
-        require("nvchad_ui.tabufline").close_buffer()
+        require("nvchad.tabufline").close_buffer()
       end,
-      "Close Buffer",
+      "Close buffer",
       opts = { nowait = true },
     },
     ["<leader>bn"] = {
       function()
-        require("nvchad_ui.tabufline").tabuflineNext()
+        require("nvchad.tabufline").tabuflineNext()
       end,
       "Buffer Next",
       opts = { nowait = true },
     },
     ["<leader>bo"] = {
       function()
-        require("nvchad_ui.tabufline").closeOtherBufs()
+        require("nvchad.tabufline").closeOtherBufs()
       end,
       "Buffer Only",
       opts = { nowait = true },
     },
     ["<leader>bp"] = {
       function()
-        require("nvchad_ui.tabufline").tabuflinePrev()
+        require("nvchad.tabufline").tabuflinePrev()
       end,
       "Buffer Prev",
       opts = { nowait = true },
@@ -84,6 +84,26 @@ M.general = {
       "ToHex",
       opts = { nowait = true },
     },
+    ["<leader>y"] = {
+      '"+y<cr>',
+      "CopyToOS",
+      opts = { nowait = true, silent = true, noremap = true },
+    },
+    ["<C-S-Insert>a"] = {
+      '<ESC>ggVG<cr>',
+      "Select All",
+      opts = { nowait = true, silent = true, noremap = true },
+    },
+    ["<localleader>a"] = {
+      '<ESC>ggVG<cr>',
+      "Select All",
+      opts = { nowait = true, silent = true, noremap = true },
+    },
+    ["<C-A>"] = {
+      '<ESC>ggVG<cr>',
+      "Select All",
+      opts = { nowait = true, silent = true, noremap = true },
+    },
   },
 
   v = {
@@ -91,9 +111,37 @@ M.general = {
       "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
       "Toggle comment",
     },
-    ["<M-[>2;5+"] = {
-      ':"+y<cr>',
+    ["<leader>y"] = {
+      '"+y<cr>',
       "CopyToOS",
+      opts = { nowait = true, silent = true, noremap = true },
+    },
+    ["<localleader>a"] = {
+      '<ESC>ggVG<cr>',
+      "Select All",
+      opts = { nowait = true, silent = true, noremap = true },
+    },
+    ["<C-A>"] = {
+      '<ESC>ggVG<cr>',
+      "Select All",
+      opts = { nowait = true, silent = true, noremap = true },
+    },
+    ["<C-S-Insert>a"] = {
+      '<ESC>ggVG<cr>',
+      "Select All",
+      opts = { nowait = true, silent = true, noremap = true },
+    },
+    ["<M-[>2;5+"] = {
+      '"+y<cr>',
+      "CopyToOS",
+      opts = { nowait = true, silent = true, noremap = true },
+    },
+  },
+
+  i = {
+    ["<C-a>"] = {
+      "<Home><CR>",
+      opts = { nowait = true },
     },
   },
 }

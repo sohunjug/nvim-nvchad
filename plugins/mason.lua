@@ -39,7 +39,6 @@ M.opts = {
     "helm-ls",
     "isort",
     "jq",
-    "java-language-server",
     "jdtls",
     "json-lsp",
     "vscode-json-language-server",

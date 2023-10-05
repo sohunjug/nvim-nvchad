@@ -15,6 +15,9 @@ M.config = function()
         nav = false,
         z = true,
         g = true,
+        y = true,
+        c = true,
+        d = true,
       },
     },
 
