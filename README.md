@@ -12,4 +12,4 @@ Install NvChad: `git clone https://github.com/NvChad/NvChad.git ~/.config/nvim`
 
 ## Third
 
-Install this config: `git clone https://github.com/sohunjug/nv.nvim_config.git ~/.config/nvim/lua/custom`
+Install this config: `git clone https://github.com/sohunjug/nvim-nvchad.git ~/.config/nvim/lua/custom`
