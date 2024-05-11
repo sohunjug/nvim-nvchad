@@ -172,6 +172,19 @@ M.lspconfig = {
       end,
       "Goto next",
     },
+    ["<leader>lr"] = { "<cmd> LspRestart <CR>", "LspRestart" },
+
+    ["gR"] = { "<cmd>Lspsaga project_rename <CR>", "LspRename" },
+
+    ["ga"] = { "<cmd>Lspsaga code_action <CR>", "Lsp Code Action" },
+
+    ["gP"] = { "<cmd>Lspsaga peek_definition <CR>", "Lsp Peek Definition" },
+
+    ["gI"] = { "<cmd>Lspsaga incoming_calls <CR>", "Lsp Incoming Calls" },
+
+    ["gO"] = { "<cmd>Lspsaga outgoing_calls <CR>", "Lsp Outgoing Calls" },
+
+    ["<leader>ta"] = { "<cmd>Lspsaga outline <CR>", "Symbols Outline" },
   },
 }
 
@@ -279,6 +292,79 @@ M.crates = {
   -- vim.keymap.set("n", "<leader>cR", crates.open_repository, opts)
   -- vim.keymap.set("n", "<leader>cD", crates.open_documentation, opts)
   -- vim.keymap.set("n", "<leader>cC", crates.open_crates_io, opts)
+}
+
+M.nvterm = {
+  plugin = true,
+
+  t = {
+    -- toggle in terminal mode
+    ["<A-l>"] = {
+      function()
+        require("nvterm.terminal").toggle "float"
+      end,
+      "Toggle floating term",
+    },
+
+    ["<A-h>"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
+    },
+
+    ["<A-v>"] = {
+      function()
+        require("nvterm.terminal").toggle "vertical"
+      end,
+      "Toggle vertical term",
+    },
+  },
+
+  n = {
+    -- toggle in normal mode
+    ["<A-l>"] = {
+      function()
+        require("nvterm.terminal").toggle "float"
+      end,
+      "Toggle floating term",
+    },
+
+    ["<A-h>"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
+    },
+
+    ["<A-v>"] = {
+      function()
+        require("nvterm.terminal").toggle "vertical"
+      end,
+      "Toggle vertical term",
+    },
+
+    -- new
+    ["<leader>ti"] = {
+      function()
+        require("nvterm.terminal").new "float"
+      end,
+      "New floating term",
+    },
+    ["<leader>th"] = {
+      function()
+        require("nvterm.terminal").new "horizontal"
+      end,
+      "New horizontal term",
+    },
+
+    ["<leader>tv"] = {
+      function()
+        require("nvterm.terminal").new "vertical"
+      end,
+      "New vertical term",
+    },
+  },
 }
 
 return M

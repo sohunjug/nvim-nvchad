@@ -62,15 +62,80 @@ opt.history = 2000
 opt.colorcolumn = "120"
 
 g.mapleader = " "
-g.maplocalleader = "\\"
-g.loaded_python3_provider = 1
+g.maplocalleader = ","
+-- g.loaded_python3_provider = 1
+-------------------------------------- autocmds ------------------------------------------
+local autocmd = vim.api.nvim_create_autocmd
 
 if vim.fn.has "gui" then
   -- vim.g.guifont = "FiraCode Nerd Font Mono:h13"
   vim.g.guifont = "JetBrainsMono Nerd Font Mono:h13"
 end
--------------------------------------- autocmds ------------------------------------------
-local autocmd = vim.api.nvim_create_autocmd
+
+if vim.g.neovide then
+  opt.linespace = 0
+
+  -- g.neovide_theme = "dark"
+  g.neovide_scale_factor = 1.0
+  g.neovide_padding_top = 0
+  g.neovide_padding_bottom = 0
+  g.neovide_padding_right = 0
+  g.neovide_padding_left = 0
+
+  g.neovide_window_blurred = true
+
+  -- g.neovide_floating_blur_amount_x = 2.0
+  -- g.neovide_floating_blur_amount_y = 2.0
+
+  g.neovide_transparency = 0.7
+  g.transparency = 0.7
+
+  g.neovide_scroll_animation_length = 0.1
+  g.neovide_scroll_animation_far_lines = 1
+
+  g.neovide_refresh_rate = 120
+  g.neovide_remember_window_size = true
+
+  g.neovide_profiler = false
+  g.neovide_input_macos_alt_is_meta = true
+
+  -- g.neovide_touch_deadzone = 3.0
+
+  g.neovide_cursor_vfx_mode = "sonicboom"
+  g.neovide_cursor_animate_in_insert_mode = false
+  g.neovide_cursor_animate_command_line = false
+  g.neovide_cursor_smooth_blink = false
+
+  g.neovide_cursor_unfocused_outline_width = 0.05
+  g.neovide_cursor_vfx_particle_lifetime = 0.1
+
+  g.neovide_touch_drag_timeout = 0.1
+
+  g.neovide_cursor_animation_length = 0.1
+  g.neovide_cursor_trail_size = 0.2
+
+  local function set_ime(args)
+    if args.event:match "Enter$" then
+      g.neovide_input_ime = true
+    else
+      g.neovide_input_ime = false
+    end
+  end
+
+  local ime_input = vim.api.nvim_create_augroup("ime_input", { clear = true })
+
+  autocmd({ "InsertEnter", "InsertLeave" }, {
+    group = ime_input,
+    pattern = "*",
+    callback = set_ime,
+  })
+
+  autocmd({ "CmdlineEnter", "CmdlineLeave" }, {
+    group = ime_input,
+    pattern = "[/\\?]",
+    callback = set_ime,
+  })
+end
 
 if vim.loop.os_uname().sysname == "Darwin" then
   g.clipboard = {
@@ -103,6 +168,21 @@ autocmd("FileType", {
   pattern = "qf",
   callback = function()
     vim.opt_local.buflisted = false
+  end,
+})
+
+autocmd("BufReadPost", {
+  pattern = "*",
+  callback = function()
+    local line = vim.fn.line "'\""
+    if
+      line > 1
+      and line <= vim.fn.line "$"
+      and vim.bo.filetype ~= "commit"
+      and vim.fn.index({ "xxd", "gitrebase" }, vim.bo.filetype) == -1
+    then
+      vim.cmd 'normal! g`"'
+    end
   end,
 })
 

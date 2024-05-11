@@ -5,12 +5,22 @@ M.pyright = {
     python = {
       analysis = {
         autoSearchPaths = true,
-        diagnosticMode = "workspace",
+        diagnosticMode = "openFilesOnly",
         useLibraryCodeForTypes = true,
+        venvPath = "~/.virtualenvs",
         -- typeCheckingMode = "off",
         diagnosticSeverityOverrides = {
+          strictListInference = false,
+          strictDictionaryInference= false,
+          strictSetInference = false,
           reportUndefinedVariable = false,
           reportGeneralTypeIssues = false,
+          reportMissingImports = true,
+          reportMissingTypeStubs= false,
+          reportReturnType = "warning",
+          reportArgumentType = "warning",
+          reportAssignmentType = "warning",
+          reportAttributeAccessIssue = "warning",
         },
       },
     },

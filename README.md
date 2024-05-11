@@ -1,3 +1,15 @@
-# Example_config
+# nv.nvim_config
 
-This can be used as an example custom config for NvChad, this branch is a minimal one. Do check the feature_full branch if you need all the ease in your config.
+NvChad Neovim Config Custom Directory for sohunjug
+
+## First
+
+Install NvChad: `git clone https://github.com/NvChad/NvChad.git ~/.config/nvim`
+
+## Second
+
+`rm -rf ~/.config/nvim/lua/custom`
+
+## Third
+
+Install this config: `git clone https://github.com/sohunjug/nv.nvim_config.git ~/.config/nvim/lua/custom`

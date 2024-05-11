@@ -208,12 +208,24 @@ M.config = function()
       cursorline = true,
       debounce_delay = 15,
       width = 30,
-      hide_root_folder = false,
+      -- hide_root_folder = false,
       -- adaptive_size = false,
       number = false,
       relativenumber = false,
       preserve_window_proportions = false,
       signcolumn = "yes",
+      float = {
+        enable = false,
+        quit_on_focus_loss = true,
+        open_win_config = {
+          relative = "editor",
+          border = "rounded",
+          width = 30,
+          height = 30,
+          row = 1,
+          col = 1,
+        },
+      },
       --[[ mappings = {
 				list = {
 					{ key = { "l", "o", "<2-LeftMouse>", "<CR>" }, action_cb = tree_cb "edit" },
@@ -324,8 +336,8 @@ M.config = function()
     },
     tab = {
       sync = {
-        open = false,
-        close = false,
+        open = true,
+        close = true,
         ignore = {},
       },
     },

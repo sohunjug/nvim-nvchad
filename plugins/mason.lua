@@ -37,6 +37,7 @@ M.opts = {
     "goimports",
     "gopls",
     "helm-ls",
+    "llm-ls",
     "isort",
     "jq",
     "jdtls",
