@@ -69,7 +69,7 @@ local autocmd = vim.api.nvim_create_autocmd
 
 if vim.fn.has "gui" then
   -- vim.g.guifont = "FiraCode Nerd Font Mono:h13"
-  vim.g.guifont = "JetBrainsMono Nerd Font Mono:h13"
+  vim.g.guifont = "JetBrains Mono NL:h13"
 end
 
 if vim.g.neovide then
@@ -87,10 +87,10 @@ if vim.g.neovide then
   -- g.neovide_floating_blur_amount_x = 2.0
   -- g.neovide_floating_blur_amount_y = 2.0
 
-  g.neovide_transparency = 0.7
-  g.transparency = 0.7
+  g.neovide_transparency = 0.8
+  g.transparency = 0.8
 
-  g.neovide_scroll_animation_length = 0.1
+  g.neovide_scroll_animation_length = 0
   g.neovide_scroll_animation_far_lines = 1
 
   g.neovide_refresh_rate = 120
@@ -105,14 +105,15 @@ if vim.g.neovide then
   g.neovide_cursor_animate_in_insert_mode = false
   g.neovide_cursor_animate_command_line = false
   g.neovide_cursor_smooth_blink = false
+  g.neovide_confirm_quit = true
 
   g.neovide_cursor_unfocused_outline_width = 0.05
   g.neovide_cursor_vfx_particle_lifetime = 0.1
 
   g.neovide_touch_drag_timeout = 0.1
 
-  g.neovide_cursor_animation_length = 0.1
-  g.neovide_cursor_trail_size = 0.2
+  g.neovide_cursor_animation_length = 0.05
+  g.neovide_cursor_trail_size = 0.1
 
   local function set_ime(args)
     if args.event:match "Enter$" then

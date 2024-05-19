@@ -31,7 +31,12 @@ M.ui = {
     modules = nil,
   },
 
-  lsp = { signature = true },
+  lsp = {
+    signature = {
+      disabled = false,
+      silent = true, -- silences 'no signature help available' message from appearing
+    },
+  },
 
   term = {
     hl = "Normal:term,WinSeparator:WinSeparator",

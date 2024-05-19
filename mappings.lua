@@ -174,7 +174,7 @@ M.lspconfig = {
     },
     ["<leader>lr"] = { "<cmd> LspRestart <CR>", "LspRestart" },
 
-    ["gR"] = { "<cmd>Lspsaga project_rename <CR>", "LspRename" },
+    ["gR"] = { "<cmd>Lspsaga rename <CR>", "LspRename" },
 
     ["ga"] = { "<cmd>Lspsaga code_action <CR>", "Lsp Code Action" },
 
