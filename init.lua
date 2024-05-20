@@ -97,7 +97,7 @@ if vim.g.neovide then
   g.neovide_remember_window_size = true
 
   g.neovide_profiler = false
-  g.neovide_input_macos_alt_is_meta = true
+  g.neovide_input_macos_option_key_is_meta = true
 
   -- g.neovide_touch_deadzone = 3.0
 
