@@ -90,7 +90,7 @@ M.config = function()
     -- open_on_setup_file = false,
     -- open_on_tab = false,
     sort_by = "case_sensitive",
-    prefer_startup_root = false,
+    prefer_startup_root = true,
     sync_root_with_cwd = true,
     reload_on_bufenter = false,
     respect_buf_cwd = false,
@@ -166,6 +166,9 @@ M.config = function()
       },
       symlink_destination = true,
     },
+    root_dirs = {
+      ".git",
+    },
     --[[ update_to_buf_dir = {
          -- enable the feature
          enable = true,
@@ -197,10 +200,12 @@ M.config = function()
       enable = true,
       -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
       -- only relevant when `update_focused_file.enable` is true
-      update_root = true,
+      update_root = {
+        enable = true,
+        ignore_list = { ".git", "node_modules", ".cache" },
+      },
       -- list of buffer names / filetypes that will not update the cwd if the file isn't found under the current root directory
       -- only relevant when `update_focused_file.update_cwd` is true and `update_focused_file.enable` is true
-      ignore_list = { ".git", "node_modules", ".cache" },
     },
     view = {
       side = "left",

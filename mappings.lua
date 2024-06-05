@@ -74,6 +74,11 @@ M.general = {
       "UndoTree",
       opts = { nowait = true },
     },
+    ["<leader><leader>"] = {
+      ":nohl<cr>",
+      "NoHighLight",
+      opts = { nowait = true },
+    },
     ["<leader>he"] = {
       ":%!xxd -r<cr>",
       "ToAscii",
@@ -90,17 +95,17 @@ M.general = {
       opts = { nowait = true, silent = true, noremap = true },
     },
     ["<C-S-Insert>a"] = {
-      '<ESC>ggVG<cr>',
+      "<ESC>ggVG<cr>",
       "Select All",
       opts = { nowait = true, silent = true, noremap = true },
     },
     ["<localleader>a"] = {
-      '<ESC>ggVG<cr>',
+      "<ESC>ggVG<cr>",
       "Select All",
       opts = { nowait = true, silent = true, noremap = true },
     },
     ["<C-A>"] = {
-      '<ESC>ggVG<cr>',
+      "<ESC>ggVG<cr>",
       "Select All",
       opts = { nowait = true, silent = true, noremap = true },
     },
@@ -117,17 +122,17 @@ M.general = {
       opts = { nowait = true, silent = true, noremap = true },
     },
     ["<localleader>a"] = {
-      '<ESC>ggVG<cr>',
+      "<ESC>ggVG<cr>",
       "Select All",
       opts = { nowait = true, silent = true, noremap = true },
     },
     ["<C-A>"] = {
-      '<ESC>ggVG<cr>',
+      "<ESC>ggVG<cr>",
       "Select All",
       opts = { nowait = true, silent = true, noremap = true },
     },
     ["<C-S-Insert>a"] = {
-      '<ESC>ggVG<cr>',
+      "<ESC>ggVG<cr>",
       "Select All",
       opts = { nowait = true, silent = true, noremap = true },
     },

@@ -69,7 +69,7 @@ local autocmd = vim.api.nvim_create_autocmd
 
 if vim.fn.has "gui" then
   -- vim.g.guifont = "FiraCode Nerd Font Mono:h13"
-  vim.g.guifont = "JetBrains Mono NL:h13"
+  vim.g.guifont = "JetBrainsMonoNL Nerd Font:h12"
 end
 
 if vim.g.neovide then

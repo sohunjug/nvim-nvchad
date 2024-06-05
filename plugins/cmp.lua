@@ -41,7 +41,8 @@ M.dependencies = {
 }
 
 M.opts = function()
-  _opts = require "plugins.configs.cmp"
+  -- _opts = require "plugins.configs.cmp"
+  local _opts = require "plugins.configs.cmp"
   _opts.sources = {
     { name = "codeium", offset = 1 },
     { name = "nvim_lsp", offset = 2 },
