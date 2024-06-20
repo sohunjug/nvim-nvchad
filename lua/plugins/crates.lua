@@ -13,7 +13,7 @@ M.config = function()
     enabled = true,
     name = "crates.nvim",
   } }
-  require("core.utils").load_mappings "crates"
+  require("utils").load_mappings "crates"
 end
 
 return M

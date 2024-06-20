@@ -1,4 +1,5 @@
----@type ChadrcConfig
+-- This file  needs to have same structure as nvconfig.lua 
+-- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvconfig.lua
 local M = {}
 
 -- Path to overriding theme and highlights files
@@ -52,9 +53,7 @@ M.ui = {
   },
 }
 
-M.plugins = "custom.plugins"
-
 -- check core.mappings for table structure
-M.mappings = require "custom.mappings"
+M.mappings = require "mappings"
 
 return M

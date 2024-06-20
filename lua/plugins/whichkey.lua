@@ -4,6 +4,10 @@ local M = {
   "folke/which-key.nvim",
 }
 
+M.init = function()
+  require("utils").load_mappings "whichkey"
+end
+
 M.config = function()
   wk.setup {
     plugins = {

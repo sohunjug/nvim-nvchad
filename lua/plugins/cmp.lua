@@ -10,7 +10,8 @@ M.dependencies = {
     dependencies = "rafamadriz/friendly-snippets",
     opts = { history = true, updateevents = "TextChanged,TextChangedI" },
     config = function(_, opts)
-      require("plugins.configs.others").luasnip(opts)
+      require("luasnip").config.set_config(opts)
+      require("nvchad.configs.luasnip")
     end,
   },
 
@@ -42,7 +43,7 @@ M.dependencies = {
 
 M.opts = function()
   -- _opts = require "plugins.configs.cmp"
-  local _opts = require "plugins.configs.cmp"
+  local _opts = require "nvchad.configs.cmp"
   _opts.sources = {
     { name = "codeium", offset = 1 },
     { name = "nvim_lsp", offset = 2 },

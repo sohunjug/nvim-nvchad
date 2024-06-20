@@ -1,14 +1,4 @@
----@type MappingsTable
 local M = {}
-
-M.disabled = {
-  n = {
-    ["<leader>b"] = "",
-    ["<leader>h"] = "",
-    ["h"] = "",
-    ["e"] = "",
-  },
-}
 
 M.general = {
   n = {
@@ -16,12 +6,6 @@ M.general = {
     ["Q"] = { "q", "quick", opts = { nowait = true } },
     ["q"] = { "<cmd> q <cr>", "quit", opts = { nowait = true } },
     -- ["<leader>b"] = {name = "+Buffer"},
-    ["<leader>bf"] = {
-      function()
-        vim.lsp.buf.format { async = true }
-      end,
-      "LSP formatting",
-    },
     ["<leader>cl"] = {
       function()
         require("Comment.api").toggle.linewise.current()
@@ -109,6 +93,7 @@ M.general = {
       "Select All",
       opts = { nowait = true, silent = true, noremap = true },
     },
+    ["<leader>fo"] = { "<cmd> NvimTreeFocus <CR>", "Toggle nvimtree Focus" },
   },
 
   v = {
@@ -152,10 +137,6 @@ M.general = {
 }
 
 M.lspconfig = {
-  plugin = true,
-
-  -- See `<cmd> :help vim.lsp.*` for documentation on any of the below functions
-
   n = {
     ["<leader>fr"] = {
       function()
@@ -190,24 +171,30 @@ M.lspconfig = {
     ["gO"] = { "<cmd>Lspsaga outgoing_calls <CR>", "Lsp Outgoing Calls" },
 
     ["<leader>ta"] = { "<cmd>Lspsaga outline <CR>", "Symbols Outline" },
+    ["<leader>bf"] = {
+      function()
+        require("conform").format {
+          lsp_fallback = true,
+          async = true,
+        }
+      end,
+      "format files",
+    },
   },
 }
 
 M.nvimtree = {
-  plugin = true,
-
   n = {
     -- toggle
     ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
 
     ["<leader>ft"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
     -- focus
-    ["<leader>fo"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+    ["<leader>fl"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
   },
 }
 
 M.hop = {
-  plugin = true,
   n = {
     ["<leader>hw"] = { "<cmd> HopWord <cr>", "HopWord" },
     ["<leader>haw"] = { "<cmd> HopWordMW <cr>", "HopWordMW" },
@@ -217,8 +204,6 @@ M.hop = {
 }
 
 M.telescope = {
-  plugin = true,
-
   n = {
     -- find
     ["<leader>ts"] = { "<cmd> Telescope lsp_document_symbols <CR>", "Document Symbols" },
@@ -227,7 +212,6 @@ M.telescope = {
 }
 
 M.crates = {
-  plugin = true,
   n = {
     ["<leader>ct"] = {
       function()
@@ -300,8 +284,6 @@ M.crates = {
 }
 
 M.nvterm = {
-  plugin = true,
-
   t = {
     -- toggle in terminal mode
     ["<A-l>"] = {

@@ -2,6 +2,10 @@ local M = {
   "nvim-tree/nvim-tree.lua",
 }
 
+M.init = function()
+  require("utils").load_mappings "nvimtree"
+end
+
 M.config = function()
   -- local tree_cb = require("nvim-tree.config").nvim_tree_callback
   local function on_attach(bufnr)
