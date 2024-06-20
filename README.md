@@ -4,7 +4,7 @@ NvChad Neovim Config Custom Directory for sohunjug
 
 ## First
 
-Install NvChad: `git clone https://github.com/NvChad/NvChad.git ~/.config/nvim`
+Install NvChad: `git clone https://github.com/NvChad/NvChad.git ~/.config/nvim -b v2.0`
 
 ## Second
 
