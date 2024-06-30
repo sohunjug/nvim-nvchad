@@ -83,8 +83,8 @@ if g.neovide then
   -- g.neovide_floating_blur_amount_x = 2.0
   -- g.neovide_floating_blur_amount_y = 2.0
 
-  g.neovide_transparency = 0.8
-  g.transparency = 0.8
+  g.neovide_transparency = 0.9
+  g.transparency = 0.9
 
   g.neovide_scroll_animation_length = 0
   g.neovide_scroll_animation_far_lines = 1

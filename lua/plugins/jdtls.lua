@@ -44,7 +44,7 @@ end
 M.config = function()
   -- LSP capabilities
   local jdtls = require "jdtls"
-  local capabilities = require("plugins.configs.lspconfig").capabilities
+  local capabilities = require("nvchad.configs.lspconfig").capabilities
   local extendedClientCapabilities = jdtls.extendedClientCapabilities
   extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
