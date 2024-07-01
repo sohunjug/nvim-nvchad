@@ -1,7 +1,8 @@
 local M = {
   "simrat39/rust-tools.nvim",
-  ft = "rust",
-  event = { "BufRead Cargo.toml" },
+  -- ft = "rust",
+  -- event = { "BufRead Cargo.toml" },
+  enable = false,
   -- ft = function(_, filetype)
   --   local name = vim.fn.expand "%:t"
   --
