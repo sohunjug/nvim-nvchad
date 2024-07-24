@@ -39,7 +39,6 @@ M.gopls = {
         unusewrites = true,
       },
       staticcheck = true,
-      completeUnimported = true,
       semanticTokens = true,
       odelenses = {
         references = true,

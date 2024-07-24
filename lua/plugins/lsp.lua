@@ -23,6 +23,25 @@ local servers = { html = {}, cssls = {}, tsserver = {}, vimls = {}, dockerls = {
 
 local merge = utils.tb_merge
 -- local merge = S_NVIM.utils.partial(vim.tbl_deep_extend, "force")
+M.init = function()
+  local configs = require "lspconfig/configs"
+  local util = require "lspconfig/util"
+
+  configs.kcl = {
+    default_config = {
+      cmd = { "kcl-language-server" },
+      filetypes = { "kcl" },
+      root_dir = util.path.dirname,
+    },
+    -- on_new_config = function(new_config) end;
+    -- on_attach = function(client, bufnr) end;
+    docs = {
+      default_config = {
+        root_dir = [[root_pattern(".git")]],
+      },
+    },
+  }
+end
 
 M.config = function()
   -- if you just want default config for the servers then put them in a table

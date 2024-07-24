@@ -359,11 +359,11 @@ M.config = function()
         trash = true,
       },
     },
-    experimental = {
-      git = {
-        async = true,
-      },
-    },
+    -- experimental = {
+    --   git = {
+    --     async = true,
+    --   },
+    -- },
     log = {
       enable = false,
       truncate = false,
