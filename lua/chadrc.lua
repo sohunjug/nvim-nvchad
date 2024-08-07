@@ -1,22 +1,10 @@
--- This file  needs to have same structure as nvconfig.lua 
+-- This file  needs to have same structure as nvconfig.lua
 -- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvconfig.lua
 local M = {}
 
 -- Path to overriding theme and highlights files
 
 M.ui = {
-  theme = "kanagawa",
-  theme_toggle = { "kanagawa", "everforest_light" },
-
-  hl_override = {
-    Comment = {
-      italic = true,
-    },
-  },
-  hl_add = {
-    NvimTreeOpenedFolderName = { fg = "green", bold = true },
-  },
-
   cmp = {
     icons = true,
     lspkind_text = true,
@@ -39,6 +27,10 @@ M.ui = {
     },
   },
 
+  tabufline = {
+    order = { "treeOffset", "buffers", "tabs", "btns" },
+  },
+
   term = {
     hl = "Normal:term,WinSeparator:WinSeparator",
     sizes = { sp = 0.3, vsp = 0.2 },
@@ -50,6 +42,22 @@ M.ui = {
       height = 0.4,
       border = "single",
     },
+  },
+
+  telescope = { style = "borderless" },
+}
+
+M.base46 = {
+  theme = "kanagawa",
+  theme_toggle = { "kanagawa", "everforest_light" },
+
+  hl_override = {
+    Comment = {
+      italic = true,
+    },
+  },
+  hl_add = {
+    NvimTreeOpenedFolderName = { fg = "green", bold = true },
   },
 }
 

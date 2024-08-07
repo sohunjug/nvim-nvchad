@@ -60,10 +60,8 @@ M.config = function()
     }, opts))
   end
 
-  wk.register {
-    ["<Leader>"] = {
-      l = { name = "+Lsp" },
-    },
+  wk.add {
+    { "<Leader>l", { group = "Lsp" } },
   }
 
   --require("core.utils").load_mappings "lspconfig"
