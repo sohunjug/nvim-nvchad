@@ -25,6 +25,16 @@ M.partial = function(fn, ...)
   end
 end
 
+M.closeOtherBufs = function()
+  for _, buf in ipairs(vim.t.bufs) do
+    if buf ~= vim.api.nvim_get_current_buf() then
+      vim.api.nvim_buf_delete(buf, {})
+    end
+  end
+
+  vim.cmd "redrawtabline"
+end
+
 M.load_mappings = function(section, mapping_opt)
   vim.schedule(function()
     local function set_section_map(section_values)

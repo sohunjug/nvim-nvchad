@@ -34,21 +34,21 @@ M.general = {
     },
     ["<leader>bn"] = {
       function()
-        require("nvchad.tabufline").tabuflineNext()
+        require("nvchad.tabufline").next()
       end,
       "Buffer Next",
       opts = { nowait = true },
     },
     ["<leader>bo"] = {
       function()
-        require("nvchad.tabufline").closeOtherBufs()
+        require("utils").closeOtherBufs()
       end,
       "Buffer Only",
       opts = { nowait = true },
     },
     ["<leader>bp"] = {
       function()
-        require("nvchad.tabufline").tabuflinePrev()
+        require("nvchad.tabufline").prev()
       end,
       "Buffer Prev",
       opts = { nowait = true },

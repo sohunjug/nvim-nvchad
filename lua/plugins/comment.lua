@@ -15,6 +15,9 @@ M.init = function()
 end
 M.config = function(_, opts)
   require("Comment").setup(opts)
+
+  local ft = require("Comment.ft")
+  ft.set("kcl", "# %s")
 end
 
 return M
